@@ -1,0 +1,35 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Generacion de Reportes por nota</h5>
+ 
+        </div>
+        <div class="card-body"> 
+
+          <form (ngSubmit)="onSubmit()" [formGroup]=reporteForm #formDir="ngForm">  
+           <div class="form-group">
+                  <label>Temas</label>
+                  <select   class="form-control"  id="nota" required  name="nota"   formControlName="nota">
+                    <option value="" selected>Selecciona una nota...</option>
+                    <option *ngFor="let nota of mis_publicaciones" [value]="nota.idPublicaciones ">
+                      {{nota.Nombre}}
+                    </option>
+                  </select>
+                </div> 
+                <div class="col-md-6 ml-auto mr-auto text-center">
+ 
+         <button  type="button" class="btn btn-info" (click)="  downloadPDF( );"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional register(); -->
+                <span><b> Generar reporte </b></span>
+        </button>
+ </div>
+</form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

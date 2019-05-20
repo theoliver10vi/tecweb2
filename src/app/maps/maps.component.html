@@ -1,0 +1,63 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header ">
+          Resultados...
+          <div  *ngIf="hidden">
+           <h4 style="text-align: center;" class="card-title">{{this.encabezado}}<br><img width="400" height="300" src="{{this.img}}"> </h4>
+           </div>
+        </div>
+        <div class="card-body ">
+          <form (ngSubmit)="onSubmit()" [formGroup]=TemasForm #formDir="ngForm"> 
+            <div  *ngIf="!hidden">
+ <div class="form-group">
+                  <label>Publicaciones</label>
+                  <select   class="form-control"  id="nota" required  name="nota"   formControlName="nota">
+                    <option value="" selected>Selecciona una nota...</option>
+                    <option *ngFor="let nota of mis_publicaciones" [value]="nota.idPublicaciones ">
+                      {{nota.Nombre}}
+                    </option>
+                  </select>
+                </div> 
+   <div class="col-md-6 ml-auto mr-auto text-center">
+     <button  type="button" class="btn btn-info" (click)="   cambio( );"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional   ver(); -->
+                <span><b> Mostrar nota</b></span>
+        </button>
+   </div>
+ </div>
+              </form>
+              <div  *ngIf="hidden">
+                      
+
+           <p>{{this.contenido}}</p>
+        <div class="card-footer ">    
+        <div class="col-md-6 ml-auto   text-center  ">
+ <p>Creado por: {{this.autor}}</p>
+         <button  type="button" class="btn btn-neutral" (click)="positivo(); "  >
+             <!-- <a href="/user-profile"> Link de referecia provisional -->
+                <span><b><i class="now-ui-icons ui-2_like "></i>  Me gusta {{this.valP}}</b></span>
+        </button>
+
+
+       <button  type="button" class="btn btn-neutral" (click)="notannegativo();"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional -->
+                <span><b><i class="now-ui-icons ui-2_like spin2"></i>   No me gusta   {{this.valN}}</b></span>
+        </button>
+ 
+               <button  type="button" class="btn btn-neutral" (click)="negativo();"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional -->
+                <span><b><i class="now-ui-icons ui-1_simple-remove "></i>  No me interesa</b></span>
+        </button>
+ 
+                </div> 
+              </div>
+               
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+
+<div class="logo">
+    <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+      <div class="logo-img">
+          <img src="./assets/img/lunanegra-3.png"/>
+      </div>
+    </a>
+    <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+        Umbra
+    </a>
+</div>
+<div class="sidebar-wrapper ">
+        <div class="logo">
+    <a  class="simple-text-title">
+        Acciones.
+    </a>
+</div>
+    <ul class="nav" >
+
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="  {{menuItem.class}}  nav-item ">
+            <a [routerLink]="[menuItem.path]" >
+                <i class="now-ui-icons  {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+
+        </li>
+        <div class="logo">
+        </div>
+<div class="logo">
+        <a  class="simple-text-title logo-normal">
+       Busqueda
+    </a>
+</div>
+            </ul>
+
+        <ul class="nav  ">
+<form   [formGroup]=buscaForm #formDir="ngForm">
+            <div class="input-group no-border">
+              <input type="text"  class="form-control"   placeholder="" (keyup.enter)="onEnter( )"  formControlName="nombre">
+   <i class="now-ui-icons ui-1_zoom-bold"></i>
+            </div>
+          </form>
+</ul>
+</div>

@@ -1,0 +1,41 @@
+<div class="panel-header panel-header-sm">
+ 
+</div>
+
+<div class="main-content">
+ 
+    <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+ <h4 style="text-align: center;" class="card-title">{{this.encabezado}}<br><img width="400" height="300" src="{{this.img}}"> </h4>
+        </div>
+        <div class="card-body">  
+
+           <p>{{this.contenido}}</p>
+        <div class="card-footer ">    
+        <div class="col-md-6 ml-auto   text-center  ">
+ <p>Creado por: {{this.autor}}</p>
+         <button  type="button" class="btn btn-neutral" (click)="positivo(); "  >
+             <!-- <a href="/user-profile"> Link de referecia provisional -->
+                <span><b><i class="now-ui-icons ui-2_like "></i>  Me gusta {{this.valP}}</b></span>
+        </button>
+
+
+       <button  type="button" class="btn btn-neutral" (click)="notannegativo();"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional -->
+                <span><b><i class="now-ui-icons ui-2_like spin2"></i>   No me gusta   {{this.valN}}</b></span>
+        </button>
+ 
+               <button  type="button" class="btn btn-neutral" (click)="negativo();"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional -->
+                <span><b><i class="now-ui-icons ui-1_simple-remove "></i>  No me interesa</b></span>
+        </button>
+ 
+                </div> 
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

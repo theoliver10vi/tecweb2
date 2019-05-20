@@ -1,0 +1,97 @@
+ 
+<div class="main-panelL"> 
+    <div class="col-md-6 ml-auto mr-auto text-center">
+      <div class="card">
+        <div class="card-header">
+        	<img src="./assets/img/carter-eclipse.jpg"  height="220" width="220">
+          <h4 class="card-title">Welcom to Umbra </h4>
+        </div> 
+        <div class="card-body">
+          <div class="col-lg px-18">
+          <form (ngSubmit)="onSubmit()" [formGroup]=userForm #formDir="ngForm">                
+                <div class="form-group">
+                  <label>Usuario</label>
+                  <input class="form-control" placeholder="Usuario" type="text" formControlName="user">
+                </div> 
+                                <div class="form-group">
+                  <label>Contraseña</label>
+                  <input class="form-control" placeholder="Contraseña" type="password" formControlName="pass">
+                </div> 
+<div *ngIf="hidden">
+                          <div class="form-group">
+                  <label>Edad</label>
+                  <input class="form-control" placeholder="Edad" type="text" formControlName="Edad">
+                </div> 
+                                <div class="form-group">
+                  <label>Genero</label>
+                                    <select   class="form-control"  id="genero" required  name="genero" placeholder="genero" formControlName="genero">
+                    <option value="" selected>Selecciona un genero...</option>
+                    <option *ngFor="let genero of generos" [value]="genero.id ">
+                      {{genero.genero}}
+                    </option>
+                  </select>
+                </div> 
+
+                          <div class="form-group">
+                  <label>Estado Civil</label>
+ 
+                  <select   class="form-control"  id="estado" required  name="estado"   formControlName="estado">
+                    <option value="" selected>Selecciona un estado civil...</option>
+                    <option *ngFor="let estado of estados" [value]="estado.id ">
+                      {{estado.estado}}
+                    </option>
+                  </select>
+                </div> 
+                <div *ngIf="hidden2">
+                  <div class="form-group">
+                  <label>Temas</label>
+ 
+                  <select   class="form-control"  id="tema" required  name="tema"   formControlName="tema">
+                    <option value="" selected>Selecciona un tema...</option>
+                    <option *ngFor="let tema of mis_temas" [value]="tema.idTemas ">
+                      {{tema.Nombre}}
+                    </option>
+                  </select>
+                </div> 
+              </div>
+ 
+</div> 
+
+
+               
+        <div class="col-md-6 ml-auto mr-auto text-center">
+<div *ngIf="hidden3">
+         <button  type="button" class="btn btn-info" (click)=" ver(); register(); ocultar2();"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional register(); -->
+                <span><b> Continuar Registro </b></span>
+        </button>
+  </div>
+  <div *ngIf="hidden2">
+         <button  type="button" class="btn btn-info" (click)="   register2( );"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional   ver(); -->
+                <span><b> Completar Registro </b></span>
+        </button>
+  </div>
+  <div *ngIf="!hidden">
+
+       <button  type="button" class="btn btn-info" (click)="login();"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional -->
+                <span><b> Iniciar Sesion </b></span>
+        </button>
+         
+               <button  type="button" class="btn btn-info" (click)="ocultar();"  >
+             <!-- <a href="/user-profile"> Link de referecia provisional -->
+                <span><b> Registrarse</b></span>
+        </button>
+         </div>
+              <p>{{loginMessage}}</p>
+                </div> 
+              </form>
+              
+              </div> 
+              </div> 
+      </div> 
+     </div> 
+</div> 
+
+<!--(click)="showNotification('top','center')"-->
